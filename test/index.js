@@ -3,18 +3,18 @@ const text = document.querySelector('#text');
 
 const socketConnection = new WebSocket('ws://localhost:8000/socket/');
 
-// socketConnection.onmessage = function(event) {
-//   btn.innerText = event.data;
-// };
+socketConnection.onmessage = function(event) {
+  btn.innerText = event.data;
+};
 
-// btn.addEventListener('click', () => {
-//   socketConnection.send(text.value);
-// })
+btn.addEventListener('click', () => {
+  socketConnection.send(text.value);
+})
 
-// socketConnection.addEventListener('error', e => {
-//   console.log(e);
-// })
+socketConnection.addEventListener('error', e => {
+  console.log(e);
+})
 
-// socketConnection.addEventListener('open', e => {
-//   console.log(e);
-// })
+socketConnection.addEventListener('open', e => {
+  console.log(e);
+})
