@@ -4,7 +4,7 @@ const text = document.querySelector('#text');
 const socketConnection = new WebSocket('ws://localhost:8000/socket/');
 
 socketConnection.onmessage = function(event) {
-  btn.innerText = event.data;
+  console.log(event.data);
 };
 
 btn.addEventListener('click', () => {
