@@ -18,3 +18,7 @@ socketConnection.addEventListener('error', e => {
 socketConnection.addEventListener('open', e => {
   console.log(e);
 })
+
+socketConnection.addEventListener('error', (e) => {
+  console.log(e);
+})
