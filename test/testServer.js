@@ -11,8 +11,8 @@ const connection = new SocketConnection(server);
 
 app.get('/socket', (req, res) => {
   const socket = connection.createConnection(req, { id: 'hiho' });
-  socket.on('message', function (msg) {
-    socket.send('helo')
+  socket.on('message', (msg) => {
+    socket.send(msg)
   })
 })
 
