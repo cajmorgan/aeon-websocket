@@ -12,7 +12,7 @@ const connection = new SocketConnection(server);
 app.get('/socket', (req, res) => {
   const socket = connection.createConnection(req, { id: 'hiho' });
   socket.on('message', function (msg) {
-    console.log(msg);
+    socket.send('helo')
   })
 })
 
