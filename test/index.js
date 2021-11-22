@@ -4,7 +4,7 @@ const text = document.querySelector('#text');
 const body = document.querySelector('body');
 
 const name = window.prompt('Sir, name pls...');
-const socketConnection = new WebSocket(`ws://localhost:8000/socket/${name}`);
+const socketConnection = new WebSocket(`ws://192.168.32.202:8000/socket/${name}`);
 
 socketConnection.onmessage = function(event) {
   const p = document.createElement('p');
@@ -14,6 +14,7 @@ socketConnection.onmessage = function(event) {
 
 btn.addEventListener('click', () => {
   socketConnection.send(text.value);
+  text.value = '';
 })
 
 close.addEventListener('click', () => {

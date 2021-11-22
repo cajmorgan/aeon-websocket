@@ -6,11 +6,10 @@ const app = express();
 
 app.use(express.static('test'));
 
-const server = app.listen(PORT, () => console.log(`Test Server on: ${PORT}`))
+const server = app.listen(PORT,'192.168.32.202', () => console.log(`Test Server on: ${PORT}`))
 const connection = new SocketConnection(server);
-connection.on('close', () => {
-  console.log('Person left...');
-})
+connection.on('connect', () => console.log('Person joined...'));
+connection.on('close', () => console.log('Person left...'));
 const sockets = [];
 
 app.get('/socket/:name', (req, res) => {
