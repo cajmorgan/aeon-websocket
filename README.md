@@ -3,6 +3,12 @@
 
 This websocket server library is written from ground-up, using the WebSocket protocol implementation from [RFC](https://datatracker.ietf.org/doc/html/rfc6455). Using a WebSocket with a library on a basic level is usually a pretty uncomplicated task, but implementing a WebSocket client or server is a bit more tedious. 
 
+### Usage
+
+```js
+const codeExample = 0;
+```
+
 ### The Protocol
 
 The WebSocket protocol is interesting and works in a bit special way. 
