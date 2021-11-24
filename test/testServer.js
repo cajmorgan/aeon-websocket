@@ -13,7 +13,7 @@ const connection = new SocketConnection(server); // Prepares the socket by suppl
 connection.on('connect', socket => console.log(`${socket.props.name} connected!`)); //Sets up an event when a connection is successful
 connection.on('close', socket => console.log(`${socket.props.name} left...`)); //Sets up an event when a connection is closed
 
-app.get('/socket/:name/:id', req => {
+app.get('/socket/:name/:id', (req, res) => {
   const chatProps = {
     name: req.params.name,
     id: req.params.id

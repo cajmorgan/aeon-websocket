@@ -9,7 +9,7 @@ Creating a very primitive chat room using Express and Aeon, note that this is no
 server.js
 ```js
 const express = require("express");
-const { SocketConnection } = require('../index');
+const { SocketConnection } = require('aeon-websocket');
 
 const PORT = 8000;
 const HOST = '127.0.0.1';
@@ -93,10 +93,12 @@ index.js (client)
 
 ```
 
+### API
+
 ### The Protocol
 
-The WebSocket protocol is interesting and works in a bit special way. 
-First the client needs to take initiative and send an opening handshake request to a normal HTTP server.
+The WebSocket protocol is interesting and works in a ***bit*** of a special way. 
+First the client needs to take the initiative and send an opening handshake request to a normal HTTP server.
 This request needs to contain upgrade headers, which can look something like: 
 ```html
 GET /chat HTTP/1.1
