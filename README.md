@@ -41,7 +41,6 @@ app.get('/socket/:name/:id', req => {
 ```
 
 index.html
-´´´
 <!DOCTYPE html>
 <html>
   <head>
@@ -54,7 +53,7 @@ index.html
     <button id="close">Close Socket</button>
   </body>
 </html>
-```
+
 
 index.js (client)
 ```js
