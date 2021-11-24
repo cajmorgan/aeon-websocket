@@ -41,7 +41,7 @@ app.get('/socket/:name/:id', req => {
 ```
 
 index.html
-´´´html
+´´´
 <!DOCTYPE html>
 <html>
   <head>
