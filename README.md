@@ -41,19 +41,20 @@ app.get('/socket/:name/:id', req => {
 ```
 
 index.html
-<!DOCTYPE html>
-<html>
-  <head>
-    <script src="index.js" defer></script>
-  </head>
-  <body>
-    <h1>Socket</h1>
-    <input type="text" id="text">
-    <button id="send">Send Message</button>
-    <button id="close">Close Socket</button>
-  </body>
-</html>
-
+´´´html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <script src="index.js" defer></script>
+    </head>
+    <body>
+      <h1>Socket</h1>
+      <input type="text" id="text">
+      <button id="send">Send Message</button>
+      <button id="close">Close Socket</button>
+    </body>
+  </html>
+```
 
 index.js (client)
 ```js
