@@ -1,16 +1,17 @@
-const btn = document.querySelector('#ping');
+const btn = document.querySelector('#send');
 const close = document.querySelector('#close');
 const text = document.querySelector('#text');
 const body = document.querySelector('body');
 
 const name = window.prompt('Sir, name pls...');
-const socketConnection = new WebSocket(`ws://192.168.32.202:8000/socket/${name}`);
+const room = window.prompt('Room id pls...');
+const socketConnection = new WebSocket(`ws://127.0.0.1:8000/socket/${name}/${room}`);
 
-socketConnection.onmessage = function(event) {
+socketConnection.addEventListener('message', (event) => {
   const p = document.createElement('p');
   p.innerText = event.data;
   body.appendChild(p);
-};
+}); 
 
 btn.addEventListener('click', () => {
   socketConnection.send(text.value);
@@ -21,10 +22,10 @@ close.addEventListener('click', () => {
   socketConnection.close();
 })
 
-socketConnection.addEventListener('error', e => {
+socketConnection.addEventListener('open', e => {
   console.log(e);
 })
 
-socketConnection.addEventListener('open', e => {
+socketConnection.addEventListener('error', e => {
   console.log(e);
 })
